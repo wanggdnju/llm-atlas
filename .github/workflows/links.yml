@@ -1,0 +1,19 @@
+# 每周全量校验一次链接：索引仓最容易的死法是慢慢烂掉，而不是没人看。
+name: links
+
+on:
+  schedule:
+    - cron: "31 2 * * 1"      # 每周一 02:31 UTC
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: node scripts/check-links.mjs

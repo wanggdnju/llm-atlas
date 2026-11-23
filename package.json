@@ -1,0 +1,15 @@
+{
+  "name": "llm-atlas-index",
+  "version": "0.1.0",
+  "private": true,
+  "description": "按工程链路组织的大模型论文与实现索引",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-links.mjs",
+    "check:fast": "node scripts/check-links.mjs --offline"
+  },
+  "engines": {
+    "node": ">=20.18.0"
+  },
+  "license": "MIT"
+}
